@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>229</width>
+    <height>331</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Address book</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../rubrica.qrc">
+    <normaloff>:/images/system-users.png</normaloff>:/images/system-users.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="5" column="0">
+        <widget class="QPushButton" name="about_contact">
+         <property name="text">
+          <string>About</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../rubrica.qrc">
+           <normaloff>:/images/info.png</normaloff>:/images/info.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="remove_contatct">
+         <property name="text">
+          <string>Remove contact</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../rubrica.qrc">
+           <normaloff>:/images/edit-delete.png</normaloff>:/images/edit-delete.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="find_contact">
+         <property name="text">
+          <string>Find contact</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../rubrica.qrc">
+           <normaloff>:/images/edit-find.png</normaloff>:/images/edit-find.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="update_contatc">
+         <property name="text">
+          <string>Update contact</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../rubrica.qrc">
+           <normaloff>:/images/system-software-update.png</normaloff>:/images/system-software-update.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="addContact">
+         <property name="text">
+          <string>Add contact</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../rubrica.qrc">
+           <normaloff>:/images/system-users.png</normaloff>:/images/system-users.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="view_contact">
+         <property name="text">
+          <string>View contact</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../rubrica.qrc">
+           <normaloff>:/images/view_contact.png</normaloff>:/images/view_contact.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>229</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionView_contact"/>
+    <addaction name="actionInsert"/>
+    <addaction name="actionRemove"/>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionFind_contact"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/exit.png</normaloff>:/images/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionInsert">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/system-users.png</normaloff>:/images/system-users.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add contact</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/edit-delete.png</normaloff>:/images/edit-delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove contact</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/system-software-update.png</normaloff>:/images/system-software-update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update contact</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/info.png</normaloff>:/images/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionFind_contact">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/edit-find.png</normaloff>:/images/edit-find.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find contact</string>
+   </property>
+  </action>
+  <action name="actionView_contact">
+   <property name="icon">
+    <iconset resource="../rubrica.qrc">
+     <normaloff>:/images/view_contact.png</normaloff>:/images/view_contact.png</iconset>
+   </property>
+   <property name="text">
+    <string>View contact</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../rubrica.qrc"/>
+ </resources>
+ <connections/>
+</ui>
