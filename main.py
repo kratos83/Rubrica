@@ -1,11 +1,14 @@
 #Importo i file python
 import sys
-#include QT4
-from PyQt4 import QtGui, QtCore, QtNetwork, QtSql
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyQt4.QtSql import *
-from PyQt4.QtNetwork import *
+
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
+from PyQt5.QtWidgets import *
+
 #Importo la ui 
 from ui import rubrica, info, lista_contatti,addSaveContact,deleteContact,addUpdateContact,findContact
 from ui.info import info as Info
@@ -19,7 +22,7 @@ import connessione
 #Importo il tempo
 import time
 
-class main (QtGui.QMainWindow, rubrica.Ui_MainWindow):
+class main (QMainWindow, rubrica.Ui_MainWindow):
     
                     def __init__(self,  parent=None):
                                 super(main, self).__init__(parent)
@@ -94,12 +97,13 @@ class main (QtGui.QMainWindow, rubrica.Ui_MainWindow):
 				self.findContact.exec_()
 
 if __name__ == '__main__':
-	app = QtGui.QApplication(sys.argv)
+	app = QApplication(sys.argv)
+	#app.setStyle(QStyleFactory.create("Oxygen"));
 	if not connessione.creaConnessione():
 	   sys.exit(1)
 
 	form = main()
-	sG = QtGui.QApplication.desktop().screenGeometry()
+	sG = QApplication.desktop().screenGeometry()
 	x = (sG.width()-form.width()) / 2
 	y = (sG.height()-form.height()) / 2
 	form.move(x,y)

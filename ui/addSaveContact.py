@@ -1,15 +1,17 @@
 import sys
 
-#include QT4
-from PyQt4 import QtGui, QtCore, QtSql
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyQt4.QtSql import *
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
+from PyQt5.QtWidgets import *
 
 #Importo la ui 
 import contact_save
 
-class addSaveContact (QtGui.QDialog, contact_save.Ui_Dialog):
+class addSaveContact (QDialog, contact_save.Ui_Dialog):
     
                     def __init__(self,  parent=None):
                                 QDialog.__init__(self, parent)
@@ -36,7 +38,7 @@ class addSaveContact (QtGui.QDialog, contact_save.Ui_Dialog):
 					query_id = QSqlQuery()
 					query_id.exec_("select count(id)+1 from rubrica")
 					if query_id.next():
-						idRubrica = query_id.value(0).toString()
+						idRubrica = query_id.value(0)
 					query.prepare("INSERT INTO rubrica "
 						    "VALUES ('"+str(idRubrica)+"','"+self.name.text()+"','"+self.surname.text()+"','"+self.address.text()+"',"
 						    "'"+self.email.text()+"','"+self.phone.text()+"','"+self.mobile.text()+"')")

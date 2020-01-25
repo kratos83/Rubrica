@@ -1,15 +1,17 @@
 import sys
 
-#include QT4
-from PyQt4 import QtGui, QtCore, QtSql
-from PyQt4.QtSql import *
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
+from PyQt5.QtWidgets import *
 
 #Importo la ui 
 import delete_contact
 
-class deleteContact (QtGui.QDialog, delete_contact.Ui_Dialog):
+class deleteContact (QDialog, delete_contact.Ui_Dialog):
     
                     def __init__(self,  parent=None):
                                 QDialog.__init__(self, parent)
@@ -44,13 +46,13 @@ class deleteContact (QtGui.QDialog, delete_contact.Ui_Dialog):
 
 			#Visualizzo i dati all'interno della tabella
 			self.tableView.setModel(self.model)
-			self.tableView.horizontalHeader().setResizeMode(QHeaderView.Stretch)
+			self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 			self.tableView.setEditTriggers(QAbstractItemView.NoEditTriggers);
 
 		    def deleteAccount(self):
 			#Elimino il dato
 			query = QSqlQuery()
-			query.exec_("select * from rubrica where id='"+self.model.data(self.model.index(self.tableView.selectionModel().currentIndex().row(),self.tableView.selectionModel().currentIndex().column()),Qt.DisplayRole).toString()+"'")
+			query.exec_("select * from rubrica where id='"+str(self.model.data(self.model.index(self.tableView.selectionModel().currentIndex().row(),self.tableView.selectionModel().currentIndex().column()),Qt.DisplayRole))+"'")
 			#Visualizzo le informazioni
 			box = QMessageBox(self)
 			box.setWindowTitle("Address book")
@@ -66,11 +68,11 @@ class deleteContact (QtGui.QDialog, delete_contact.Ui_Dialog):
 
 		    def delAccount(self):
 			query = QSqlQuery()
-			query.prepare("delete from rubrica where id='"+self.model.data(self.model.index(self.tableView.selectionModel().currentIndex().row(),self.tableView.selectionModel().currentIndex().column()),Qt.DisplayRole).toString()+"'")
+			query.prepare("delete from rubrica where id='"+str(self.model.data(self.model.index(self.tableView.selectionModel().currentIndex().row(),self.tableView.selectionModel().currentIndex().column()),Qt.DisplayRole))+"'")
 
 			if query.exec_():
 				print "Delete successfully..."
 			else:
-				print str(query.lastError().text)
+				print query.lastError()
 			self.lista()
 

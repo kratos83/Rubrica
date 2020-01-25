@@ -1,14 +1,17 @@
 import sys
 
-#include QT4
-from PyQt4 import QtGui, QtCore
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
+from PyQt5.QtWidgets import *
 
 #Importo la ui 
 import about 
 
-class info (QtGui.QDialog, about.Ui_Dialog):
+class info (QDialog, about.Ui_Dialog):
     
                     def __init__(self,  parent=None):
                                 QDialog.__init__(self, parent)

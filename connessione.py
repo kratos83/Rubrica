@@ -1,10 +1,11 @@
 import sys
 
-#include QT4
-from PyQt4 import QtCore, QtSql, QtGui
-from PyQt4.QtCore import *
-from PyQt4.QtSql import *
-from PyQt4.QtGui import *
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
 
 
 #-------------------------------------------------------

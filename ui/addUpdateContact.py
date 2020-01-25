@@ -1,15 +1,17 @@
 import sys
 
-#include QT4
-from PyQt4 import QtGui, QtCore, QtSql
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyQt4.QtSql import *
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
+from PyQt5.QtWidgets import *
 
 #Importo la ui 
 import update_contact
 
-class addUpdateContact (QtGui.QDialog, update_contact.Ui_Dialog):
+class addUpdateContact (QDialog, update_contact.Ui_Dialog):
     
                     def __init__(self,  parent=None):
                                 QDialog.__init__(self, parent)
@@ -40,4 +42,4 @@ class addUpdateContact (QtGui.QDialog, update_contact.Ui_Dialog):
 
 			#Visualizzo i dati all'interno della tabella
 			self.tableView.setModel(self.model)
-			self.tableView.horizontalHeader().setResizeMode(QHeaderView.Stretch)			
+			self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)			

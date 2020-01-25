@@ -1,15 +1,17 @@
 import sys
 
-#include QT4
-from PyQt4 import QtGui, QtCore, QtSql
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyQt4.QtSql import *
+#include QT5
+from PyQt5 import QtGui, QtCore, QtNetwork, QtSql, QtWidgets
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtSql import *
+from PyQt5.QtNetwork import *
+from PyQt5.QtWidgets import *
 
 #Importo la ui 
 import find_contact
 
-class findContact (QtGui.QDialog, find_contact.Ui_Dialog):
+class findContact (QDialog, find_contact.Ui_Dialog):
     
                     def __init__(self,  parent=None):
                                 QDialog.__init__(self, parent)
@@ -43,7 +45,7 @@ class findContact (QtGui.QDialog, find_contact.Ui_Dialog):
 
 			#Visualizzo i dati all'interno della tabella
 			self.tableView.setModel(self.model)
-			self.tableView.horizontalHeader().setResizeMode(QHeaderView.Stretch)
+			self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 			self.tableView.setEditTriggers(QAbstractItemView.NoEditTriggers);
 
 		    def cercaUtente(self,QString):
@@ -53,7 +55,7 @@ class findContact (QtGui.QDialog, find_contact.Ui_Dialog):
 				query.prepare("select nome from rubrica")
 				if query.exec_():
 					while query.next():
-						list_st << query.value(0).toString()
+						list_st << query.value(0)
 				completer = QCompleter(list_st,self)
 				completer.setCaseSensitivity(Qt.CaseInsensitive)
 				self.cerca_txt.setCompleter(completer)
